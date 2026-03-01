@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0d0f13;
+  --bg-secondary: #131720;
+  --bg-panel: #181c24;
+  --bg-header: #1a1f2b;
+  --bg-hover: #1e2535;
+  --bg-selected: #1d3354;
+  --bg-highlight: #2a3a5c;
+  --border-color: #252d3d;
+  --border-subtle: #1e2535;
+  --text-primary: #d4dae8;
+  --text-secondary: #8896b0;
+  --text-muted: #4a566e;
+  --text-accent: #4d9eff;
+  --text-addr: #5a7a9e;
+  --text-hex: #a8c4e0;
+  --text-ascii: #7ec8a4;
+  --text-error: #e05e5e;
+  --text-success: #4ec994;
+  --text-warning: #d4a843;
+  --accent-blue: #4d9eff;
+  --accent-blue-dim: #2a5fa8;
+  --selection-bg: #1d3a6e;
+  --selection-border: #3d6ab8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'SF Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3650;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #364570;
+}
+
+input, textarea, select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  border-radius: 3px;
+  padding: 6px 10px;
+  transition: border-color 0.15s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-blue);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent-blue-dim);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-blue);
+  padding: 6px 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  letter-spacing: 0.03em;
+  font-size: 11px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--text-error);
+  border: 1px solid #5a2a2a;
+  padding: 5px 12px;
+  font-size: 11px;
+}
+
+.btn-danger:hover {
+  background: #3a1515;
+  border-color: var(--text-error);
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.panel-header {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tag-active { background: #1a3a2a; color: #4ec994; border: 1px solid #2a5a3a; }
+.tag-closed { background: #2a2a2a; color: #6a7a8a; border: 1px solid #3a3a3a; }
+.tag-pending { background: #2a2a0a; color: #d4a843; border: 1px solid #4a4a0a; }
+.tag-review { background: #1a2a4a; color: #4d9eff; border: 1px solid #2a3a6a; }
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-dot-active { background: #4ec994; box-shadow: 0 0 4px #4ec994; }
+.status-dot-closed { background: #6a7a8a; }
+.status-dot-pending { background: #d4a843; }
+.status-dot-review { background: #4d9eff; }
+
+.divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 8px 0;
+}
+
+.code { font-family: inherit; }
+
