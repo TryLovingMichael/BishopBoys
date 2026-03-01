@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "SITE_PASSWORD"
+
 [[edge_functions]]
   path = "/api/login"
   function = "auth"
